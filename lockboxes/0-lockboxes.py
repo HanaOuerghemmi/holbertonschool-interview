@@ -3,13 +3,14 @@
 Lockboxes
 """
 
+
 def canUnlockAll(boxes):
     """
     method that determines if all the boxes can be opened.
     """
-    n = len(boxes) 
-    opened = [False] * n 
-    Result = [0]  
+    n = len(boxes)
+    opened = [False] * n
+    Result = [0]
 
     opened[0] = True
 
