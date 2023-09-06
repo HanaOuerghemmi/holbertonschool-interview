@@ -9,15 +9,15 @@
 listint_t *find_listint_loop(listint_t *head)
 {
     listint_t *start = head, *loop = head;
-
+    
     while (loop && loop->next)
     {
         loop = loop->next->next;
         start = start->next;
-
+        
         if (loop == start)
         {
-
+            
             start = head;
             while (start != loop)
             {
