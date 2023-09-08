@@ -1,1 +1,1 @@
-## 0x07. Linked list c..
+#. Linked list
