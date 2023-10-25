@@ -5,29 +5,29 @@
 /**
  * getMax - get max in array
  * @array: The array to be printed
- * @size_t: size of the array
+ * @size: size of the array
  * Return: the max number in the array
  */
 
-int getMax(int *array, size_t size) {
+int getMax(int *array, int size) {
     int max = array[0];
     int i;
 
-    for (i = 1; i < size; i++) {
-        if (array[i] > max) {
+    for (i = 1; i < size; i++) 
+    {
+        if (array[i] > max) 
             max = array[i];
-        }
     }
     return max;
 }
 /**
  * countSort - counting sort
  * @array: The array to be printed
- * @size_t: size of the array
+ * @size: size of the array
  * @exp: the  digit's place value
  */
 
-void countSort(int *array, size_t size, int exp) {
+void countSort(int *array, int size, int exp) {
     int *output = malloc(size * sizeof(int));
     int count[10] = {0};
     int i;
@@ -36,7 +36,7 @@ void countSort(int *array, size_t size, int exp) {
         exit(1); // Memory allocation error
     }
 
-    for (size_t i = 0; i < size; i++) {
+    for (i = 0; i < size; i++) {
         count[(array[i] / exp) % 10]++;
     }
 
@@ -44,7 +44,7 @@ void countSort(int *array, size_t size, int exp) {
         count[i] += count[i - 1];
     }
 
-    for (int i = size - 1; i >= 0; i--) {
+    for (i = size - 1; i >= 0; i--) {
         output[count[(array[i] / exp) % 10] - 1] = array[i];
         count[(array[i] / exp) % 10]--;
     }
@@ -60,7 +60,7 @@ void countSort(int *array, size_t size, int exp) {
 /**
  * radix_sort - radix sort
  * @array: The array to be printed
- * @size_t: size of the array
+ * @size: size of the array
  */
 void radix_sort(int *array, size_t size) {
     int max = getMax(array, size);
