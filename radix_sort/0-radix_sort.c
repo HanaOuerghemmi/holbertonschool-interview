@@ -11,7 +11,9 @@
 
 int getMax(int *array, size_t size) {
     int max = array[0];
-    for (size_t i = 1; i < size; i++) {
+    int i;
+
+    for (i = 1; i < size; i++) {
         if (array[i] > max) {
             max = array[i];
         }
@@ -28,6 +30,7 @@ int getMax(int *array, size_t size) {
 void countSort(int *array, size_t size, int exp) {
     int *output = malloc(size * sizeof(int));
     int count[10] = {0};
+    int i;
 
     if (output == NULL) {
         exit(1); // Memory allocation error
@@ -46,7 +49,7 @@ void countSort(int *array, size_t size, int exp) {
         count[(array[i] / exp) % 10]--;
     }
 
-    for (size_t i = 0; i < size; i++) {
+    for (i = 0; i < size; i++) {
         array[i] = output[i];
     }
 
