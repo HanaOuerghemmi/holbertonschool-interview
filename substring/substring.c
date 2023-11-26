@@ -3,6 +3,17 @@
 #include <string.h>
 #include "substring.h"
 
+/**
+ * is_valid_substring - checks if valid substring
+ *
+ * @s: string to be scanned
+ * @words: words
+ * @nb_words: nomber words
+ * @word_len: length word
+ * @start: start
+ * Return: 1 if substring, otherwise 0
+ */
+
 int is_valid_substring(char const *s, char const **words, int nb_words, int word_len, int start)
 {
     int *word_count = (int *)calloc(nb_words, sizeof(int));
@@ -39,6 +50,16 @@ int is_valid_substring(char const *s, char const **words, int nb_words, int word
     free(word_count);
     return 1;
 }
+
+/**
+ * find_substring - find substring
+ *
+ * @s: string to be scanned
+ * @words: array of words
+ * @nb_words: number of elements in the array
+ * @n: address at which to store
+ * Return: an allocated array, storing each index in otherwise NULL
+ */
 
 int *find_substring(char const *s, char const **words, int nb_words, int *n)
 {
