@@ -12,7 +12,7 @@ int is_valid_substring(char const *s, char const **words, int nb_words, int word
     for (i = 0; i < nb_words; i++)
     {
         index = start + i * word_len;
-        *word = (char *)malloc((word_len + 1) * sizeof(char));
+        word = (char *)malloc((word_len + 1) * sizeof(char));
         strncpy(word, s + index, word_len);
         word[word_len] = '\0';
 
